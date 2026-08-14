@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Maeva Mistrot dit Pachet</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-accueil">
+
+<div class="layout-wrapper">
+
+    <!-- Barre latérale -->
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <h2 class="logo-text">Maeva Mistrot dit Pachet</h2>
+            
+            <div class="menu-lateral">
+                <p class="menu-title">Mon travail</p>
+                <nav class="menu-links">
+                    <a href="index.html">← Retour à l'accueil</a>
+                    <a href="page-affiches.html">Affiche</a>
+                    <a href="page-comm.html">Comm'</a>
+                    <a href="page-photo.html">Photo</a>
+                    <a href="page-logo.html">Logo</a>
+                    <a href="page-rp.html">RP</a> 
+                </nav>
+
+                <p class="menu-title">En savoir plus</p>
+                <nav class="menu-links">
+                    <a href="a-propos.html">À propos de moi</a>
+                    <a href="contact.html">Demande de renseignement</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/maëva-mistrot-dit-pachet/" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/maeva.mdp?igsh=MXB2cDVnMjRlbTE3Ng%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+        </div>
+    </div> 
+
+    <!-- Contenu principal -->
+    <div class="main-content">
+        
+        <!-- Section d'introduction (Photo à gauche, Texte à droite) -->
+        <div class="intro-section">
+            <div class="intro-photo reveal">
+                <img src="images/Screenshot 2026-05-28 at 20.35.17.png" alt="Portrait de Maëva">
+            </div>
+
+            <div class="intro-content">
+                <p class="intro-text reveal">
+                    Hello, je suis Maëva Mistrot dit Pachet !<br>
+                    J'ai façonné ce site web en HTML et CSS afin de vous faire découvrir mon évolution au cours de ces dernières années.<br>
+                    Merci de prendre le temps de regarder mon portfolio : )<br>
+                    Toujours en soif d'apprendre, je serais heureuse d'échanger avec vous !
+                </p>
+                <p class="scroll-text reveal">Bonne découverte ↓</p>
+            </div>
+        </div>
+
+        <!-- Grille des projets (Optimisée pour s'adapter aux téléphones) -->
+        <div class="gallery-grid">
+            <a href="page-affiches.html" class="gallery-item">
+                <img src="images/affiches/Futura2.png" alt="Affiche">
+                <span class="hover-text">Affiches</span>
+            </a>
+            <a href="page-comm.html" class="gallery-item">
+                <img src="images/comm/ID-V.png" alt="Identité Visuelle">
+                <span class="hover-text">Comm'</span>
+            </a>
+            <a href="page-photo.html" class="gallery-item">
+                <img src="images/photo/rose.png" alt="Photo">
+                <span class="hover-text">Photo</span>
+            </a>
+            <a href="page-logo.html" class="gallery-item">
+                <img src="images/logo/Crush production - Logo.png" alt="Logo">
+                <span class="hover-text">Logo</span>
+            </a>
+            <a href="page-rp.html" class="gallery-item">
+                <img src="images/RP/U1.png" alt="RP">
+                <span class="hover-text">RP</span>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(reveal => observer.observe(reveal));
+    });
+</script>
+
+</body>
+</html>
