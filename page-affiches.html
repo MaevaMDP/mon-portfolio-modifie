@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affiches - Portfolio Maeva Mistrot dit Pachet</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <title>Affiches - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-accueil">
+<body>
 
 <div class="layout-wrapper">
 
-   <div class="sidebar">
+    <!-- La zone invisible qui capte la souris pour le menu -->
+    <div class="zone-declencheur">
+        <div class="icone-menu">☰</div>
+    </div>
+
+    <div class="sidebar">
         <div class="sidebar-top">
             <h2 class="logo-text">Maeva Mistrot dit Pachet</h2>
             <div class="menu-lateral">
@@ -24,7 +26,7 @@
                     <a href="page-comm.html">Comm'</a>
                     <a href="page-photo.html">Photo</a>
                     <a href="page-logo.html">Logo</a>
-                    <a href="page-rp.html">RP</a> 
+                    <a href="page-rp.html">RP</a>
                 </nav>
                 
                 <p class="menu-title">En savoir plus</p>
@@ -37,28 +39,85 @@
         
         <div class="social-links">
             <a href="https://www.linkedin.com/in/maëva-mistrot-dit-pachet/" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/maeva.mdp" target="_blank">Instagram</a>
+            <a href="https://www.instagram.com/maeva.mdp?igsh=MXB2cDVnMjRlbTE3Ng%3D%3D&utm_source=qr" target="_blank">Instagram</a>
         </div>
     </div>
+ 
+    <div class="main-content">
+        <div style="padding: 40px 40px 0 40px;">
+            <h1 class="project-title">Affiches</h1>
+        </div>
+        
+        <div class="galerie-affiches">
+    
+            <div class="affiche-item">
+                <img src="images/affiches/futura2.png" alt="Affiche Red Bull 1">
+                <div class="affiche-overlay">
+                    <p><strong>Redbull</strong> 2026</p>
+                </div>
+            </div>
 
-  <div class="main-content">
-      
-      <div class="project-section">
-          <h1 class="project-title">Mes Affiches</h1>
-          <p class="project-subtitle">Découvrez ici une sélection de mes créations graphiques et affiches réalisées au cours de mes projets.</p>
-          
-          <div class="gallery-grid">
-              <div class="gallery-item">
-                  <img src="images/affiches/Futura2.png" alt="Affiche Futura">
-                  <span class="hover-text">Affiche Futura</span>
-              </div>
-              <!-- Tu peux rajouter d'autres éléments gallery-item ici si tu as d'autres affiches -->
-          </div>
-      </div>
+            <div class="affiche-item">
+                <img src="images/affiches/Screenshot 2026-05-06 at 12.06.20.png" alt="Affiche Red Bull 2">
+                <div class="affiche-overlay">
+                    <p><strong>Bliss</strong> 2025</p>
+                </div>
+            </div>
 
-  </div>
+            <div class="affiche-item">
+                <img src="images/affiches/4.png" alt="Affiche Umaine 2">
+                <div class="affiche-overlay">
+                    <p><strong>Umaine</strong> 2025</p>
+                </div>
+            </div>
+
+            <div class="affiche-item">
+                <img src="images/affiches/Screenshot 2026-05-11 at 10.52.09.png" alt="Affiche Umaine 3">
+                <div class="affiche-overlay">
+                    <p><strong>Umaine</strong> 2025</p>
+                </div>
+            </div>
+
+            <div class="affiche-item">
+                <img src="images/affiches/Screenshot 2026-05-27 at 15.23.21.png" alt="Affiche ecolo">
+                <div class="affiche-overlay">
+                    <p><strong>Nomads</strong> 2025</p>
+                </div>
+            </div>
+
+        </div>
+    </div> 
 
 </div>
+
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img id="imgAgrandie" class="modal-content" alt="Agrandissement affiche">
+</div>
+
+<script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgAgrandie");
+
+    // Dès qu'on clique sur un projet
+    document.querySelectorAll(".affiche-item").forEach(bloc => {
+        bloc.addEventListener("click", function() {
+            modal.style.display = "flex";
+            // On copie directement le lien exact de l'image cliquée
+            modalImg.src = this.querySelector("img").src; 
+        });
+    });
+
+    // Fermer avec la croix
+    document.querySelector(".close-modal").addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // Fermer en cliquant dans le fond noir
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) modal.style.display = "none";
+    });
+</script>
 
 </body>
 </html>
