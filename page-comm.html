@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout-wrapper">
+
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <h2 class="logo-text">Maeva Mistrot dit Pachet</h2>
+            <div class="menu-lateral">
+                <p class="menu-title">Mon travail</p>
+                <nav class="menu-links">
+                    <a href="index.html">← Retour à l'accueil</a>
+                    <a href="page-affiches.html">Affiche</a>
+                    <a href="page-comm.html" class="active">Comm'</a>
+                    <a href="page-photo.html">Photo</a>
+                    <a href="page-logo.html">Logo</a>
+                    <a href="page-rp.html">RP</a> 
+                </nav>
+                
+                <p class="menu-title">En savoir plus</p>
+                <nav class="menu-links">
+                    <a href="a-propos.html">À propos de moi</a>
+                    <a href="contact.html">Demande de renseignement</a>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/maëva-mistrot-dit-pachet/" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/maeva.mdp?igsh=MXB2cDVnMjRlbTE3Ng%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+        </div>
+    </div>
+   
+    <div class="main-content">
+        <div style="padding: 40px 40px 0 40px;">
+            <h1 class="project-title">Comm'</h1>
+            <p class="project-subtitle">Stratégie de communication et visuel.</p>
+        </div>
+      
+        <div class="galerie-affiches">
+            <div class="affiche-item">
+                <img src="images/comm/ID-V.png" alt="Umaine Identité Visuelle">
+                <div class="affiche-overlay"><p><strong>Umaine</strong> Identité Visuelle</p></div>
+            </div>
+            <div class="affiche-item">
+                <img src="images/comm/Couleurs.png" alt="Umaine Couleurs">
+                <div class="affiche-overlay"><p><strong>Umaine</strong> Couleurs</p></div>
+            </div>
+        </div>
+
+        <div class="galerie-2-colonnes" style="padding-top: 0;">
+            <div class="affiche-item">
+                <img src="images/comm/Partenariat1.png" alt="Partenariat MyLittleBox">
+                <div class="affiche-overlay"><p><strong>Umaine</strong> x MyLittleBox</p></div>
+            </div>
+            <div class="affiche-item">
+                <img src="images/comm/Partenariat2.png" alt="Partenariat Calicéo">
+                <div class="affiche-overlay"><p><strong>Umaine</strong> x Calicéo</p></div>
+            </div>
+        </div>
+
+        <div class="galerie-affiches" style="padding-top: 0;">
+            <div class="affiche-item"><img src="images/comm/Market1.png" alt="Club Med"><div class="affiche-overlay"><p><strong>Club Med</strong> Stratégie Médias</p></div></div>
+            <div class="affiche-item"><img src="images/comm/Market1-5.png" alt="Club Med"><div class="affiche-overlay"><p><strong>Club Med</strong> Hors-Médias</p></div></div>
+            <div class="affiche-item"><img src="images/comm/TKPT1.png" alt="Site"><div class="affiche-overlay"><p><strong>T'as Kapté</strong> site</p></div></div>
+            <div class="affiche-item"><img src="images/comm/TKPT2.png" alt="Site"><div class="affiche-overlay"><p><strong>T'as Kapté</strong> site</p></div></div>
+        </div>
+
+        <div class="galerie-2-colonnes" style="padding-top: 0;">
+            <div class="affiche-item"><img src="images/comm/Cine.png" alt="visuels"><div class="affiche-overlay"><p><strong>Cinéma</strong> visuels</p></div></div>
+            <div class="affiche-item"><img src="images/comm/Cine2.png" alt="visuels"><div class="affiche-overlay"><p><strong>Cinéma</strong> visuels</p></div></div>
+        </div>
+    </div> 
+</div> 
+
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img id="imgAgrandie" class="modal-content" alt="Agrandissement image">
+</div>
+
+<script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgAgrandie");
+    document.querySelectorAll(".affiche-item").forEach(bloc => {
+        bloc.addEventListener("click", function() {
+            modal.style.display = "flex";
+            modalImg.src = this.querySelector("img").src; 
+        });
+    });
+    document.querySelector(".close-modal").addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) modal.style.display = "none";
+    });
+</script>
+</body>
+</html>
