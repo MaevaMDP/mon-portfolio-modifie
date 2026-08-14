@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo & Identité - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout-wrapper">
+
+    <!-- La zone invisible qui capte la souris pour le menu -->
+    <div class="zone-declencheur">
+        <div class="icone-menu">☰</div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <h2 class="logo-text">Maeva Mistrot dit Pachet</h2>
+            <div class="menu-lateral">
+                <p class="menu-title">Mon travail</p>
+                <nav class="menu-links">
+                    <a href="index.html">← Retour à l'accueil</a>
+                    <a href="page-affiches.html">Affiche</a>
+                    <a href="page-comm.html">Comm'</a>
+                    <a href="page-photo.html">Photo</a>
+                    <a href="page-logo.html" class="active">Logo</a>
+                    <a href="page-rp.html">RP</a>
+                </nav>
+                
+                <p class="menu-title">En savoir plus</p>
+                <nav class="menu-links">
+                    <a href="a-propos.html">À propos de moi</a>
+                    <a href="contact.html">Demande de renseignement</a>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/maëva-mistrot-dit-pachet/" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/maeva.mdp?igsh=MXB2cDVnMjRlbTE3Ng%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div style="padding: 40px 40px 0 40px;">
+            <h1 class="project-title">Logo & Identité</h1>
+            <p class="project-subtitle">Créations graphiques et déclinaisons de marque.</p>
+        </div>
+
+        <div class="galerie-2-colonnes">
+            <div class="affiche-item">
+                <img src="images/logo/Crush production - Logo.png" alt="Crush production">
+                <div class="affiche-overlay">
+                    <p><strong>Crush production</strong> Logo</p>
+                </div>
+            </div>
+            <div class="affiche-item">
+                <img src="images/logo/flashy.png" alt="Flashy">
+                <div class="affiche-overlay">
+                    <p><strong>Mascotte</strong> Flashy</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="height: 30px;"></div>
+
+        <div class="galerie-2-colonnes">
+            <div class="affiche-item">
+                <img src="images/logo/Design sans titre-5.png" alt="Empower">
+                <div class="affiche-overlay">
+                    <p><strong>Empower</strong> Logo</p>
+                </div>
+            </div>
+            <div class="affiche-item">
+                <img src="images/logo/Asso (1).png" alt="Les Petits Rayons">
+                <div class="affiche-overlay">
+                    <p><strong>Les Petits Rayons</strong> Logo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img id="imgAgrandie" class="modal-content" alt="Agrandissement logo">
+</div>
+
+<script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgAgrandie");
+
+    // Dès qu'on clique sur un projet
+    document.querySelectorAll(".affiche-item").forEach(bloc => {
+        bloc.addEventListener("click", function() {
+            modal.style.display = "flex";
+            // On copie directement le lien exact de l'image cliquée
+            modalImg.src = this.querySelector("img").src; 
+        });
+    });
+
+    // Fermer avec la croix
+    document.querySelector(".close-modal").addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // Fermer en cliquant dans le fond noir
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) modal.style.display = "none";
+    });
+</script>
+
+</body>
+</html>
